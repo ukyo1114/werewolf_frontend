@@ -7,7 +7,6 @@ import {
 } from 'react';
 
 import { UserState, UserAction } from '../types';
-
 import { userReducer, initialUserState } from '../reducers/userReducer';
 
 interface UserContextType {
