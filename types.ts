@@ -55,3 +55,17 @@ export interface ChannelAction {
     | 'UPDATE_GAME_STATE';
   payload?: any;
 }
+
+export interface IMessage {
+  _id: string;
+  senderId: string;
+  content: string;
+  channel: string;
+  messageType: string;
+  createdAt: Date;
+}
+
+export interface MessageAction {
+  type: 'FETCH_MESSAGES' | 'RECEIVE_MESSAGE';
+  payload?: any;
+}
