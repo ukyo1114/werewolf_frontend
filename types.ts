@@ -42,6 +42,30 @@ export interface ChannelState {
   };
 }
 
+// アクションタイプの定義
+/* export const USER_JOINED = 'USER_JOINED' as const;
+export const USER_LEFT = 'USER_LEFT' as const; */
+
+// アクションの型定義
+/* interface UserJoinedAction {
+  type: typeof USER_JOINED;
+  payload: {
+    [id: string]: {
+      name: string;
+      pic: string;
+    };
+  };
+}
+
+interface UserLeftAction {
+  type: typeof USER_LEFT;
+  payload: {
+    _id: string;
+  };
+} */
+
+// type ChannelAction = UserJoinedAction | UserLeftAction;
+
 export interface ChannelAction {
   type:
     | 'JOIN_CHANNEL'
