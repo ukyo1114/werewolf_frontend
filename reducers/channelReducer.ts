@@ -1,4 +1,4 @@
-import { reject, union, update, without } from 'lodash';
+import { union, without } from 'lodash';
 import { ChannelState, ChannelAction } from '@/types';
 
 const initialChannelState: ChannelState = {
@@ -11,7 +11,7 @@ const initialChannelState: ChannelState = {
     channelAdmin: '',
     blockedUsers: [],
   },
-  isGame: false,
+  mode: 'list',
   gameState: {
     currentDay: 0,
     currentPhase: '',
@@ -25,9 +25,9 @@ function channelReducer(
 ): ChannelState {
   switch (action.type) {
     case 'JOIN_CHANNEL':
-      return { ...initialChannelState, ...action.payload };
+      return { ...initialChannelState, ...action.payload, mode: 'channel' };
     case 'JOIN_GAME':
-      return { ...state, ...action.payload, isGame: true };
+      return { ...state, ...action.payload, isGame: true, mode: 'game' };
     case 'LEAVE_CHANNEL':
       return initialChannelState;
     case 'USER_JOINED': {

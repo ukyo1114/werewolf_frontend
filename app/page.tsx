@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <Stack>
       <h1>トップページ</h1>
-      <Link href="/register-user">ログイン</Link>
-      <Link href="/register-user">チャンネルリスト</Link>
+      <Link href="/login">ログイン</Link>
+      <Link href="/channel">チャンネルリスト</Link>
       <Link href="/register-user">ユーザー登録</Link>
-      <Link href="/register-user">説明書</Link>
+      <Link href="/manual">説明書</Link>
       <Button onClick={() => router.push('/register-user')}>
         ユーザー登録
       </Button>

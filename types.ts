@@ -34,7 +34,7 @@ export interface ChannelState {
     channelAdmin: string;
     blockedUsers: string[];
   };
-  isGame: boolean;
+  mode: string;
   gameState: {
     currentDay: number;
     currentPhase: string;

@@ -39,12 +39,12 @@ describe('channelReducer', () => {
         user1: { name: 'Alice', pic: 'alice.png' },
       });
       expect(newState.channelInfo.channelName).toBe('Test Channel');
-      expect(newState.isGame).toBe(false);
+      expect(newState.mode).toBe('channel');
     });
   });
 
   describe('JOIN_GAME', () => {
-    it('should merge payload into state and set isGame to true', () => {
+    it('should merge payload into state and set mode to game', () => {
       const action = {
         type: 'JOIN_GAME',
         payload: {
@@ -60,7 +60,7 @@ describe('channelReducer', () => {
       expect(newState.users).toEqual({
         user2: { name: 'Bob', pic: 'bob.png' },
       });
-      expect(newState.isGame).toBe(true);
+      expect(newState.mode).toBe('game');
     });
   });
 
@@ -81,6 +81,7 @@ describe('channelReducer', () => {
       const leaveAction = { type: 'LEAVE_CHANNEL' } as ChannelAction;
       const newState = channelReducer(tempState, leaveAction);
       expect(newState).toEqual(initialChannelState);
+      expect(newState.mode).toBe('list');
     });
   });
 
