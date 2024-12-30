@@ -21,8 +21,8 @@ type EmailPayload = {
 }; */
 
 async function sendEmailAdress(data: EmailPayload): Promise<void> {
-  const api = process.env.NEXT_PUBLIC_SERVER_URL;
-  await axios.post(`${api}/register-user`, data);
+  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+  await axios.post(`${serverUrl}/api/verify-email/register-user`, data);
 }
 
 export default function RegistrationEmailSender() {
@@ -77,7 +77,7 @@ export default function RegistrationEmailSender() {
 
           <Button
             type="submit"
-            loading={formik.isSubmitting}
+            loading={mutation.isPending}
             colorPalette="teal"
           >
             登録
